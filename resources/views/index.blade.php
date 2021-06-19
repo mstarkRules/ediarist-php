@@ -9,5 +9,6 @@
 <body>
     <h1>Página inicial Ediarist</h1>
     
+    {{ dd($diarists) }}
 </body>
 </html>

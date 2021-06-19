@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diarist;
 use Illuminate\Http\Request;
 
 class DiaristController extends Controller
 {
     public function index(){
-        return view('index');
+        $diarists = Diarist::get();
+        return view('index', [
+            'diarists' => $diarists
+        ]);
     }
 }
