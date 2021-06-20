@@ -18,7 +18,7 @@ class CreateDiaristsTable extends Migration
             $table->string('nome_completo', 100);
             $table->char('cpf, 11');
             $table->string('email, 100');
-            $table->char('telefone, 11');
+            $table->string('telefone, 11');
             $table->string('logradouro');
             $table->string('numero', 20);
             $table->string('bairro', 50);
