@@ -13,4 +13,9 @@ class DiaristController extends Controller
             'diarists' => $diarists
         ]);
     }
+
+    public function create()
+    {
+        return view('create');
+    }
 }

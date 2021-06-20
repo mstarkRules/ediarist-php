@@ -13,62 +13,55 @@
   </head>
   <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-darak bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{{ route('diarists.index') }}">Ediarists</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <a class="nav-link active" aria-current="page" href="{{ route('diarists.index') }}">
+              Lista de Diaristas</a>
             </li>
           </ul>
         </div>
       </div>
   </nav>
-</header>
-    <h1>Página inicial</h1>
-    <div class="container">
+</header> 
+  <div class="container">
+    <h1>Lista de Diaristas</h1>
         <table class="table">
-  <thead>
+        <thead>
 
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Telefone</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    @forelse ($diarists as $diarist)
-        <tr>
-            <th scope="row">{{ $diarist->id}}</th>
-            <td>{{ $diarist->nome_completo }}</td>
-            <td>{{ $diarist->telefone }}</td>
-            <td></td>
-        </tr>
-    @empty
-        <tr>
-            <th></th>
-            <td>Nenhum registro cadastrado</td>
-            <td></td>
-            <td></td>
-        </tr>
-    @endforelse
-  </tbody>
-</table>
-    </div>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          @forelse ($diarists as $diarist)
+              <tr>
+                  <th scope="row">{{ $diarist->id}}</th>
+                  <td>{{ $diarist->nome_completo }}</td>
+                  <td>{{ $diarist->telefone }}</td>
+                  <td></td>
+              </tr>
+          @empty
+              <tr>
+                  <th></th>
+                  <td>Nenhum registro cadastrado</td>
+                  <td></td>
+                  <td></td>
+              </tr>
+          @endforelse
+        </tbody>
+      </table>
+      <a href="{{ route('diarists.create') }}" class="btn btn-success">Nova Diarista</a>
+  </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
