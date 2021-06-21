@@ -18,4 +18,8 @@ class DiaristController extends Controller
     {
         return view('create');
     }
+    public function store(Request $request)
+    {
+        dd($request->all());
+    }
 }
