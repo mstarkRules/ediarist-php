@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DiaristController::class, 'index'])->name('diarists.index');
 Route::get('/diarists/create', [DiaristController::class, 'create'])->name('diarists.create');
 Route::post('/diarists', [DiaristController::class, 'store'])->name('diarists.store');
-Route::post('/diarists/{id}/edit', [DiaristController::class, 'edit'])->name('diarists.edit');
+Route::get('/diarists/{id}/edit', [DiaristController::class, 'edit'])->name('diarists.edit');
+Route::put('/diarists/{id}', [DiaristController::class, 'update'])->name('diarists.update');

@@ -28,4 +28,34 @@ class DiaristController extends Controller
 
         return redirect()->route('diarists.index');
     }
+
+    public function edit(int $id)
+    {
+        $diarist = Diarist::findOrFail($id);
+
+        return view('edit',[
+            'diarist' => $diarist
+        ]);
+    }
+
+    public function update(int $id, Request $request)
+    {
+        $diarist = Diarist::findOrFail($id);
+
+        $data = $request->except(['_token','_method']);
+
+        if($request->hasFile('foto_usuario')){
+            $data['foto_usuario'] = $request->foto_usuario->store('public');
+        }
+
+        $diarist->update($data);
+
+
+
+        return redirect()->route('diarists.index');
+
+
+    }
 }
+
+
