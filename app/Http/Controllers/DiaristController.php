@@ -18,8 +18,14 @@ class DiaristController extends Controller
     {
         return view('create');
     }
+
     public function store(Request $request)
     {
-        dd($request->all());
+        $dados = $request->except('_token');
+        $dados['foto_usuario'] = $request->foto_usuario->store('public');
+        
+        Diarist::create($dados);
+
+        return redirect()->route('diarists.index');
     }
 }
