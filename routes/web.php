@@ -19,3 +19,4 @@ Route::get('/diarists/create', [DiaristController::class, 'create'])->name('diar
 Route::post('/diarists', [DiaristController::class, 'store'])->name('diarists.store');
 Route::get('/diarists/{id}/edit', [DiaristController::class, 'edit'])->name('diarists.edit');
 Route::put('/diarists/{id}', [DiaristController::class, 'update'])->name('diarists.update');
+Route::get('/diarists/{id}', [DiaristController::class, 'destroy'])->name('diarists.destroy');

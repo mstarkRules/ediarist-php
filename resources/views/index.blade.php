@@ -22,6 +22,7 @@
               <td>{{ $diarist->telefone }}</td>
               <td>
                 <a href="{{ route('diarists.edit', $diarist) }}" class="btn btn-primary">Atualizar</a>
+                <a href="{{ route('diarists.destroy',$diarist) }}" class="btn btn-danger" onclick="return confirm('Tem certeza?')">Apagar</a>
               </td>
             </tr>
           @empty

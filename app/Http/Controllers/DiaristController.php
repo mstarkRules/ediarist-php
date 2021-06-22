@@ -56,6 +56,14 @@ class DiaristController extends Controller
 
 
     }
+    public function destroy(int $id)
+    {
+        $diarist = Diarist::findOrFail($id);
+
+        $diarist->delete();
+
+        return redirect()->route('diarists.index');
+    }
 }
 
 
